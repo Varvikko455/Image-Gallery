@@ -1,0 +1,71 @@
+.mainContainer{
+  height: 100%;
+  width: 100%;
+  max-width: fit-content;
+  text-align: center;
+  color: white;
+  .buttonsContainer{
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    .searchInput {
+      font-size: large;
+      height: 2.5rem;
+      width: 15rem;
+      padding: 0 0.5rem;
+      outline: none;
+      border-radius: 8px 0 0 8px;
+      border: 2px solid black;
+      border-right: none;
+    }
+    .searchButton {
+      width: 8rem;
+      border-radius: 0 8px 8px 0;
+      background-color: hsl(220, 2%, 33%);
+      color: white;
+      font-size: large;
+      font-weight: 600;
+      border: 2px solid black;
+      cursor: pointer;
+    }
+    .searchButton:hover {
+      color: rgb(187, 187, 187);
+    }
+    .searchButton:active {
+      color: rgb(187, 187, 187);
+      background-color: hsl(0, 0%, 38%);
+    }
+  }
+  .galleryButtonContainer {
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .galleryButton {
+      height: 2.5rem;
+      width: 12rem;
+      font-size: large;
+      font-weight: 600;
+      border: 2px solid black;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: hsl(220, 2%, 33%);
+      color: white;
+    }
+    .galleryButton:hover {
+      color: rgb(187, 187, 187);
+    }
+    .galleryButton:active {
+      color: rgb(187, 187, 187);
+      background-color: hsl(0, 0%, 38%);
+    }
+  }
+  .imageContainer {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,15 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import styles from './index.module.scss';
+import App from './App';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <div className={styles.main}>
+      <App />
+    </div>
+  </React.StrictMode>
+);
+

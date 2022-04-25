@@ -1,0 +1,22 @@
+.imageWrapper {
+  place-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  border-radius: 5px;
+}
+.image:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: ease-in-out 0.2s;
+}
+.checked {
+  opacity: 0.5;
+}
+.checkedText{
+  position: absolute;
+  color: rgba(255, 255, 255, 0.774);
+  text-shadow: 0 0 2px black;
+}
