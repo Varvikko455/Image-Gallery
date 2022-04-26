@@ -8,7 +8,12 @@ function Image({ image, setGallery, gallery }) {
   return (
     <div className='imageWrapper'>
       <img className={`image ${checked && 'checked'}`} 
-         onClick={(e) => { setGallery([...gallery, e.target.src]); setChecked(true); }} 
+         onClick={(e) => { setGallery([...gallery, { server: image.server,
+                                                     id: image.id,
+                                                     secret: image.secret                   
+        }]); 
+        setChecked(true); 
+        }} 
          alt='' 
          src={`https://live.staticflickr.com/${image.server}/${image.id}_${image.secret}_w.jpg`}/>
          {checked && <h2 className='checkedText'>Added to Gallery</h2>}  

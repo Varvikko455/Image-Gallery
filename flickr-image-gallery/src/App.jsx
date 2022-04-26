@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import Image from './components/Image/Image.jsx';
+import Image from './components/Image/Image';
+import GalleryImage from './components/GalleryImage/galleryImage'
 
 import styles from './App.module.scss';
 
 function App() {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState(null);
   const [gallery, setGallery] = useState([]);
   
-  const [showImages ,setShowImages] = useState(false)
+  const [showImages ,setShowImages] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
     
   const [searchValue, setSearchValue] = useState('');
@@ -20,12 +21,23 @@ function App() {
     .then(data => {
       setImages(data.photos.photo)
     });
-  }
+  };
+  function handleKeyPress(e) {
+    if(e.charCode === 13) {
+      downloadImages(searchValue);
+    }
+  };
+
+  console.log(gallery);
 
   return (
     <div className={styles.mainContainer}>
       <div className={styles.buttonsContainer}>
-        <input className={styles.searchInput} type="text" onChange={ (e) => setSearchValue(e.target.value) }/>
+        <input className={styles.searchInput}
+               placeholder={'Type a search word'} 
+               type="text" 
+               onKeyPress={(e) => handleKeyPress(e)} 
+               onChange={ (e) => setSearchValue(e.target.value) }/>
         <button className={styles.searchButton} onClick={() => { downloadImages(searchValue); setShowImages(true); setShowGallery(false) }}>Search</button>
       </div>
       <div className={styles.galleryButtonContainer}>
@@ -51,11 +63,10 @@ function App() {
                          setGallery={(gallery) => setGallery(gallery)} 
                          gallery={gallery}/>
         })}
-        {showGallery && gallery.map((picture) => { 
-          return <img className={styles.image} 
-                      alt='' 
-                      src={picture} /> })}
       </div>
+      {showGallery && gallery.map((picture) => { 
+          return <GalleryImage picture={picture}/> 
+      })}
     </div>
   )
 }
