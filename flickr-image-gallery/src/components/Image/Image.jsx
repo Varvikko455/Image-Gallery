@@ -8,7 +8,7 @@ function Image({ image, setGallery, gallery }) {
   return (
     <div className='imageWrapper'>
       <img className={`image ${checked && 'checked'}`} 
-         onClick={(e) => { setGallery([...gallery, { server: image.server,
+         onClick={() => { setGallery([...gallery, { server: image.server,
                                                      id: image.id,
                                                      secret: image.secret                   
         }]); 
@@ -19,6 +19,6 @@ function Image({ image, setGallery, gallery }) {
          {checked && <h2 className='checkedText'>Added to Gallery</h2>}  
     </div>
   )
-}
+};
 
-export default Image
+export default Image;

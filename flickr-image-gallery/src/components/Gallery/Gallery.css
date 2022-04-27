@@ -1,0 +1,8 @@
+.galleryContainer {
+  /* display: flex;
+  justify-content: center; */
+  /* position: relative; */
+}
+.galleryImage {
+  border-radius: 10px;
+}

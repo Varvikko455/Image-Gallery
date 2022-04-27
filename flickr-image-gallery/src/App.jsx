@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 import Image from './components/Image/Image';
-import GalleryImage from './components/GalleryImage/galleryImage'
+import Gallery from './components/Gallery/Gallery'
 
 import styles from './App.module.scss';
 
@@ -64,9 +64,7 @@ function App() {
                          gallery={gallery}/>
         })}
       </div>
-      {showGallery && gallery.map((picture) => { 
-          return <GalleryImage picture={picture}/> 
-      })}
+      {showGallery && <Gallery gallery={gallery}/> }
     </div>
   )
 }
