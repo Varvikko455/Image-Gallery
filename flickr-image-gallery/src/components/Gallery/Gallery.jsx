@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BsArrowRightCircle, BsArrowLeftCircle } from 'react-icons/bs';
 
 import './Gallery.css';
 
@@ -17,8 +18,6 @@ function GalleryImage({ gallery }) {
 
   return (
     <>
-      <button onClick={() => prevSlide()}>Prev</button>
-      <button onClick={() => nextSlide()}>Next</button>
       <div className='galleryContainer'>
         {gallery.length === 0 && <h2>Your gallery is empty . . .</h2>}
 
@@ -26,12 +25,16 @@ function GalleryImage({ gallery }) {
           return (
             <>
               {/* Checking for index position in gallery prop to be equal to the current image and show only that image */}
-              {index === currentImage && 
+              {index === currentImage &&
+              <>
+                <BsArrowLeftCircle className={`button left`} onClick={() => prevSlide()} />
+                <BsArrowRightCircle className={`button right`} onClick={() => nextSlide()}>Next</BsArrowRightCircle>
                 <img 
                   className={`galleryImage`}
                   src={`https://live.staticflickr.com/${picture.server}/${picture.id}_${picture.secret}_b.jpg`} 
                   alt="" 
-                />}
+                />
+              </> }
             </>
           )
         })} 

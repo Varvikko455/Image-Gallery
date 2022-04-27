@@ -1,8 +1,31 @@
 .galleryContainer {
-  /* display: flex;
-  justify-content: center; */
-  /* position: relative; */
+  position: relative;
+  z-index: 5;
 }
 .galleryImage {
   border-radius: 10px;
+  width: 1000px;
+  height: 700px;
+  box-shadow: 5px 10px #000000 0.5;
+}
+.button {
+  top: 50%;
+  position: absolute;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  color: hsla(0, 6%, 80%, 0.514);
+}
+.button:hover {
+  color: hsla(0, 6%, 80%, 0.801);
+}
+.button:active {
+  color: rgba(255, 255, 255, 0.952)
+}
+.right {
+  right: 1.5%;
+}
+.left {
+  left: 1.5%;
 }

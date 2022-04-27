@@ -15,17 +15,17 @@
       padding: 0 0.5rem;
       outline: none;
       border-radius: 8px 0 0 8px;
-      border: 2px solid black;
+      border: 1px solid rgb(192, 187, 187);
       border-right: none;
     }
     .searchButton {
       width: 8rem;
       border-radius: 0 8px 8px 0;
-      background-color: hsl(220, 2%, 33%);
+      background-color: rgb(35, 35, 99);
       color: white;
       font-size: large;
       font-weight: 600;
-      border: 2px solid black;
+      border: 1px solid rgb(109, 104, 104);
       cursor: pointer;
     }
     .searchButton:hover {
@@ -33,7 +33,7 @@
     }
     .searchButton:active {
       color: rgb(187, 187, 187);
-      background-color: hsl(0, 0%, 38%);
+      background-color: rgba(35, 35, 99, 0.589);
     }
   }
   .galleryButtonContainer {
@@ -46,10 +46,10 @@
       width: 12rem;
       font-size: large;
       font-weight: 600;
-      border: 2px solid black;
+      border: 1px solid black;
       border-radius: 8px;
       cursor: pointer;
-      background-color: hsl(220, 2%, 33%);
+      background-color: rgb(35, 35, 99);
       color: white;
     }
     .galleryButton:hover {
