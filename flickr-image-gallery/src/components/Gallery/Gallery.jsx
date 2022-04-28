@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BsArrowRightCircle, BsArrowLeftCircle } from 'react-icons/bs';
+import { MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew } from 'react-icons/md';
 
 import './Gallery.css';
 
@@ -19,21 +19,25 @@ function GalleryImage({ gallery }) {
   return (
     <>
       <div className='galleryContainer'>
+        {/* Condition if the array is empty show this message */}
         {gallery.length === 0 && <h2>Your gallery is empty . . .</h2>}
 
+        <MdOutlineArrowBackIosNew className={`button left`} onClick={() => prevSlide()} />
+        <MdOutlineArrowForwardIos className={`button right`} onClick={() => nextSlide()} />
+
+        {/* Mapping out array from gallery props and uses the data to fill source in each gallery image with a larger resolution */}
         {gallery.map((picture, index) => { 
           return (
             <>
-              <BsArrowLeftCircle className={`button left`} onClick={() => prevSlide()} />
-              <BsArrowRightCircle className={`button right`} onClick={() => nextSlide()} />
-              {/* Checking for index position in gallery prop to be equal to the current image and show only that image */}
+              {/* Condition to add class name active for trandition effect when index is equal to the current image */}
               <div className={`slider ${index === currentImage ? 'active' : ''}`}>
-              {index === currentImage &&
-                <img 
-                  className={`galleryImage`}
-                  src={`https://live.staticflickr.com/${picture.server}/${picture.id}_${picture.secret}_b.jpg`} 
-                  alt="" 
-                />}
+              {/* Checking for index position in gallery prop to be equal to the current image and show only that image */}
+                {index === currentImage &&
+                  <img 
+                    className={`galleryImage`}
+                    src={`https://live.staticflickr.com/${picture.server}/${picture.id}_${picture.secret}_b.jpg`} 
+                    alt="" 
+                  />}
               </div> 
             </>
           )

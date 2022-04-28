@@ -2,17 +2,16 @@
   position: relative;
   z-index: 5;
 }
+.slider {
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+.active {
+  opacity: 1;
+}
 .galleryImage {
   border-radius: 10px;
   box-shadow: 5px 10px #000000 0.5;
-}
-.slider {
-  opacity: 0;
-  transition-duration: 1s ease;
-}
-.slider.active {
-  opacity: 1;
-  transition-duration: 1s ease;
 }
 .button {
   top: 45%;
@@ -21,14 +20,14 @@
   width: 50px;
   height: 50px;
   cursor: pointer;
-  color: hsl(0, 1%, 36%);
+  color: rgb(133, 126, 126);
   transition: ease-in-out 0.5s;
 }
 .button:hover {
-  color: hsl(0, 1%, 53%);
+  color: rgb(7, 7, 54);
 }
 .button:active {
-  color: rgba(255, 255, 255, 0.952)
+  color: rgb(133, 126, 126);
 }
 .right {
   right: 1.5%;
