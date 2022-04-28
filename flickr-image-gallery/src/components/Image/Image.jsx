@@ -9,8 +9,8 @@ function Image({ image, setGallery, gallery }) {
     <div className='imageWrapper'>
       <img className={`image ${checked && 'checked'}`} 
          onClick={() => { setGallery([...gallery, { server: image.server,
-                                                     id: image.id,
-                                                     secret: image.secret                   
+                                                    id: image.id,
+                                                    secret: image.secret                   
         }]); 
         setChecked(true); 
         }} 

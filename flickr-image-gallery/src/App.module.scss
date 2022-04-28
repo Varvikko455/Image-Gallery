@@ -46,7 +46,7 @@
       width: 12rem;
       font-size: large;
       font-weight: 600;
-      border: 1px solid black;
+      border: 1px solid rgb(109, 104, 104);
       border-radius: 8px;
       cursor: pointer;
       background-color: rgb(35, 35, 99);
@@ -57,7 +57,7 @@
     }
     .galleryButton:active {
       color: rgb(187, 187, 187);
-      background-color: hsl(0, 0%, 38%);
+      background-color: rgba(35, 35, 99, 0.589);
     }
   }
   .imageContainer {

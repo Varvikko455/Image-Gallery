@@ -4,21 +4,28 @@
 }
 .galleryImage {
   border-radius: 10px;
-  width: 1000px;
-  height: 700px;
   box-shadow: 5px 10px #000000 0.5;
 }
+.slider {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+.slider.active {
+  opacity: 1;
+  transition-duration: 1s ease;
+}
 .button {
-  top: 50%;
+  top: 45%;
   position: absolute;
   z-index: 10;
   width: 50px;
   height: 50px;
   cursor: pointer;
-  color: hsla(0, 6%, 80%, 0.514);
+  color: hsl(0, 1%, 36%);
+  transition: ease-in-out 0.5s;
 }
 .button:hover {
-  color: hsla(0, 6%, 80%, 0.801);
+  color: hsl(0, 1%, 53%);
 }
 .button:active {
   color: rgba(255, 255, 255, 0.952)

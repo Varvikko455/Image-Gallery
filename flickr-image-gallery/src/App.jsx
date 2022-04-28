@@ -12,7 +12,7 @@ function App() {
   
   const [showImages ,setShowImages] = useState(false);
   const [showGallery, setShowGallery] = useState(false);
-    
+
   const [searchValue, setSearchValue] = useState('');
    
   function downloadImages(value) {
@@ -22,13 +22,12 @@ function App() {
       setImages(data.photos.photo)
     });
   };
+
   function handleKeyPress(e) {
     if(e.charCode === 13) {
       downloadImages(searchValue);
     }
   };
-
-  console.log(gallery);
 
   return (
     <div className={styles.mainContainer}>
@@ -37,7 +36,7 @@ function App() {
                placeholder={'Type a search word'} 
                type="text" 
                onKeyPress={(e) => handleKeyPress(e)} 
-               onChange={ (e) => setSearchValue(e.target.value) }/>
+               onChange={(e) => setSearchValue(e.target.value)}/>
         <button className={styles.searchButton} onClick={() => { downloadImages(searchValue); setShowImages(true); setShowGallery(false) }}>Search</button>
       </div>
       <div className={styles.galleryButtonContainer}>
@@ -61,7 +60,8 @@ function App() {
         {images !== null && showImages && images.map((image) => { 
           return  <Image image={image} 
                          setGallery={(gallery) => setGallery(gallery)} 
-                         gallery={gallery}/>
+                         gallery={gallery}
+                         />
         })}
       </div>
       {showGallery && <Gallery gallery={gallery}/> }

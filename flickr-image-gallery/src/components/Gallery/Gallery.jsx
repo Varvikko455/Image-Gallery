@@ -24,17 +24,17 @@ function GalleryImage({ gallery }) {
         {gallery.map((picture, index) => { 
           return (
             <>
+              <BsArrowLeftCircle className={`button left`} onClick={() => prevSlide()} />
+              <BsArrowRightCircle className={`button right`} onClick={() => nextSlide()} />
               {/* Checking for index position in gallery prop to be equal to the current image and show only that image */}
+              <div className={`slider ${index === currentImage ? 'active' : ''}`}>
               {index === currentImage &&
-              <>
-                <BsArrowLeftCircle className={`button left`} onClick={() => prevSlide()} />
-                <BsArrowRightCircle className={`button right`} onClick={() => nextSlide()}>Next</BsArrowRightCircle>
                 <img 
                   className={`galleryImage`}
                   src={`https://live.staticflickr.com/${picture.server}/${picture.id}_${picture.secret}_b.jpg`} 
                   alt="" 
-                />
-              </> }
+                />}
+              </div> 
             </>
           )
         })} 
