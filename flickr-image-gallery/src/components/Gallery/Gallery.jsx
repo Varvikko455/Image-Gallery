@@ -22,6 +22,7 @@ function GalleryImage({ gallery }) {
         {/* Condition if the array is empty show this message */}
         {gallery.length === 0 && <h2>Your gallery is empty . . .</h2>}
 
+        {/* Condition for buttons if gallery array is empty, do not show buttons*/}
         {gallery.length !== 0 && (
           <>
             <MdOutlineArrowBackIosNew className={`button left`} onClick={() => prevSlide()} />
