@@ -22,8 +22,12 @@ function GalleryImage({ gallery }) {
         {/* Condition if the array is empty show this message */}
         {gallery.length === 0 && <h2>Your gallery is empty . . .</h2>}
 
-        <MdOutlineArrowBackIosNew className={`button left`} onClick={() => prevSlide()} />
-        <MdOutlineArrowForwardIos className={`button right`} onClick={() => nextSlide()} />
+        {gallery.length !== 0 && (
+          <>
+            <MdOutlineArrowBackIosNew className={`button left`} onClick={() => prevSlide()} />
+            <MdOutlineArrowForwardIos className={`button right`} onClick={() => nextSlide()} />
+          </>
+        )}
 
         {/* Mapping out array from gallery props and uses the data to fill source in each gallery image with a larger resolution */}
         {gallery.map((picture, index) => { 

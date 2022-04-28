@@ -67,10 +67,11 @@ function App() {
         
       <div className={styles.imageContainer}>
         {/* Condition to map images when it's not equal to null and state is true */}
-        {images !== null && showImages && images.map((image) => { 
+        {images !== null && showImages && images.map((image, key) => { 
           return  <Image image={image} 
                          setGallery={(gallery) => setGallery(gallery)} 
                          gallery={gallery}
+                         key={key}
                          />
         })}
       </div>
