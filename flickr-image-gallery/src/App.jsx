@@ -20,7 +20,7 @@ function App() {
   
   /* Function that gets flickr api with a search value, search value is dynamic in this case and sets a state array with the data */
   function downloadImages(value) {
-    axios.get(` https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b54580f369a7eeebecb2004dc429d08f&text=${value}&sort=relevance&safe_search=1&format=json&nojsoncallback=1`)
+    axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=b54580f369a7eeebecb2004dc429d08f&text=${value}&sort=relevance&safe_search=1&format=json&nojsoncallback=1`)
     .then(response => response.data)
     .then(data => {
       setImages(data.photos.photo)

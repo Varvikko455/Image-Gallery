@@ -17,7 +17,7 @@ function GalleryImage({ gallery }) {
   };
 
   return (
-    <>
+    
       <div className='galleryContainer'>
         {/* Condition if the array is empty show this message */}
         {gallery.length === 0 && <h2>Your gallery is empty . . .</h2>}
@@ -48,7 +48,7 @@ function GalleryImage({ gallery }) {
           )
         })} 
       </div>
-    </>
+    
   )
 };
 

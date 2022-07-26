@@ -9,8 +9,7 @@ function Image({ image, setGallery, gallery }) {
     <div className='imageWrapper'>
       <img className={`image ${checked && 'checked'}`}
          /* On Click we send an object to the gallery state array in App.jsx with an object of server, id and secret "key" & "value"*/  
-         onClick={() => { setGallery([...gallery, { server: image.server,
-                                                    id: image.id,
+         onClick={() => { setGallery([...gallery, { server: image.server, id: image.id,
                                                     secret: image.secret                   
         }]); 
         setChecked(true); 
