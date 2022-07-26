@@ -4,6 +4,8 @@ import'./Image.css';
 function Image({ image, setGallery, gallery }) {
   /* State to keep track on user has clicked on a image or not, only used for styling */
   const [checked, setChecked] = useState(false);
+
+  console.log("test")
   
   return (
     <div className='imageWrapper'>
